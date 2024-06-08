@@ -9,6 +9,7 @@ namespace SamiFitnessBL.Model
     /// Пол.
     /// 
 {
+    [Serializable]
     public class Gender
     {
         /// <summary>
