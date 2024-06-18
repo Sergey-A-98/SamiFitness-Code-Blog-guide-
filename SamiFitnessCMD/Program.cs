@@ -23,41 +23,49 @@ namespace SamiFitnessCMD
             {
                 Console.Write("Введите пол: ");
                 var gender = Console.ReadLine();
-                DateTime birthDate;
-                double weight;
-                double height;
+                var birthDate = ParseDateTime();
+                var weight = ParseDouble("вес");
+                var height = ParseDouble("рост");
 
-                while(true)
-                {
-                    Console.Write("Введите дату рождения (dd.MM.yyyy): ");
-                    if (DateTime.TryParse(Console.ReadLine(), out birthDate))
-                    {
-                        break;  
-                    }
-                    else 
-                    {
-                        Console.WriteLine("Неверный формат даты рождения");
-                    }
-                }
 
-                userController.SetNewUserData()
+                userController.SetNewUserData(gender, birthDate, weight, height);
 
             }
             Console.WriteLine(userController.CurrentUser);
             Console.ReadLine();
         }
-        private static T double ParseDouble<T>(string name) where T: Double where T: DateTime
+
+        private static DateTime ParseDateTime()
+        {
+            DateTime birthDate;
+            while (true)
+            {
+                Console.Write("Введите дату рождения (dd.MM.yyyy): ");
+                if (DateTime.TryParse(Console.ReadLine(), out birthDate))
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Неверный формат даты рождения");
+                }
+            }
+
+            return birthDate;
+        }
+
+        private static double ParseDouble(string name)
         {
             while (true)
             {
                 Console.Write($"Введите {name}: ");
-                if (double.TryParse(Console.ReadLine(), out T value))
+                if (double.TryParse(Console.ReadLine(), out double value))
                 {
                     return value;
                 }
                 else
                 {
-                    Console.WriteLine("Неверный формат {name}");
+                    Console.WriteLine($"Неверный формат {name}");
                 }
             }
         }
