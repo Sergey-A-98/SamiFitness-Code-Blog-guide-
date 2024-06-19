@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace SamiFitnessBL.Model
 {
+    [Serializable]
     public class Food
     {
         public string Name { get; }
