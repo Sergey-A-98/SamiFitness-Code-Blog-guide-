@@ -1,10 +1,13 @@
 ﻿using SamiFitnessBL.Controller;
 using SamiFitnessBL.Model;
 using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.Eventing.Reader;
+using System.Globalization;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,8 +17,12 @@ namespace SamiFitnessCMD
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Вас приветствует приложение SamiFitness");
-            Console.WriteLine("Введите имя пользователя");
+            var culture = CultureInfo.CreateSpecificCulture("ru-ru");
+            var resourceManager = new ResourceManager("SamiFitnessCMD.Languages.Messages", typeof(Program).Assembly);
+
+            Console.WriteLine(resourceManager.GetString("WelcomeMessage",culture));
+
+            Console.WriteLine(resourceManager.GetString("EnterName", culture));
             var name = Console.ReadLine();
 
             var userController = new UserController(name);

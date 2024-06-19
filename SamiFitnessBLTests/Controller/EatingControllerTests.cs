@@ -1,13 +1,15 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SamiFitnessBL.Controller;
+using SamiFitnessBL.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SamiFitnessBLTests.Controller
+namespace SamiFitnessBL.Controller.Tests
 {
+    [TestClass()]
     public class EatingControllerTests
     {
         [TestMethod()]
