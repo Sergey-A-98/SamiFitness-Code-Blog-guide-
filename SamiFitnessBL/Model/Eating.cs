@@ -10,11 +10,15 @@ namespace SamiFitnessBL.Model
     [Serializable]
     public class Eating
     {
-        public DateTime Moment { get; }
 
-        public Dictionary<Food, double> Foods { get; }
+        public int Id { get; set; }
+        public DateTime Moment { get; set; }
 
-        public User User { get; }
+        public Dictionary<Food, double> Foods { get; set; }
+
+        public int UserId { get; set; }
+
+        public virtual User User { get; set; }
 
         public Eating(User user)
         {

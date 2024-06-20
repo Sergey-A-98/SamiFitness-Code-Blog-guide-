@@ -13,11 +13,13 @@ namespace SamiFitnessBL.Model
     [Serializable]
     public class User
     {
+
+        public int Id { get; set; }
         #region Свойства
         /// <summary>
         /// Имя.
         /// </summary>
-        public string Name {  get; }
+        public string Name {  get; set; }
         /// <summary>
         /// Пол.
         /// </summary>
