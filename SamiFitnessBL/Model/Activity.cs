@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace SamiFitnessBL.Model
 {
@@ -6,12 +8,18 @@ namespace SamiFitnessBL.Model
     public class Activity
     {
         public int Id { get; set; }
-        public string Name { get; set;}
-        public double CaloriesPerMinute { get; set;  }
+        public string Name { get; set; }
+
+        public virtual ICollection<Exercise> Exercises { get; set; }
+
+        public double CaloriesPerMinute { get; set; }
+
+        public Activity() { }
 
         public Activity(string name, double caloriesPerMinute)
         {
-            //TODO: проверка
+            // Проверка
+
             Name = name;
             CaloriesPerMinute = caloriesPerMinute;
         }

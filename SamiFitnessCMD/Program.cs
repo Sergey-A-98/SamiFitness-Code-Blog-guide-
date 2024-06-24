@@ -17,10 +17,11 @@ namespace SamiFitnessCMD
     {
         static void Main(string[] args)
         {
-            var culture = CultureInfo.CreateSpecificCulture("ru-ru");
+
+            var culture = CultureInfo.CreateSpecificCulture("en-us");
             var resourceManager = new ResourceManager("SamiFitnessCMD.Languages.Messages", typeof(Program).Assembly);
 
-            Console.WriteLine(resourceManager.GetString("WelcomeMessage",culture));
+            Console.WriteLine(resourceManager.GetString("Hello", culture));
 
             Console.WriteLine(resourceManager.GetString("EnterName", culture));
             var name = Console.ReadLine();
@@ -36,11 +37,12 @@ namespace SamiFitnessCMD
                 var weight = ParseDouble("вес");
                 var height = ParseDouble("рост");
 
-
                 userController.SetNewUserData(gender, birthDate, weight, height);
-
             }
+
+
             Console.WriteLine(userController.CurrentUser);
+
 
 
             while (true)
@@ -64,48 +66,50 @@ namespace SamiFitnessCMD
                         break;
                     case ConsoleKey.A:
                         var exe = EnterExercise();
+
                         exerciseController.Add(exe.Activity, exe.Begin, exe.End);
-                        foreach(var item in exerciseController.Exercises)
+
+                        foreach (var item in exerciseController.Exercises)
                         {
-                            Console.WriteLine($"\t{item.Activity} с {item.Start.ToShortTimeString()} до {item.Finish.ToShortTimeString()}");
+                            Console.WriteLine($"\t{item.Activity} c {item.Start.ToShortTimeString()} до {item.Finish.ToShortTimeString()}");
                         }
                         break;
                     case ConsoleKey.Q:
                         Environment.Exit(0);
                         break;
                 }
-            }
 
-            Console.ReadLine();
+                Console.ReadLine();
+            }
         }
 
         private static (DateTime Begin, DateTime End, Activity Activity) EnterExercise()
         {
-            Console.Write("Введите название упражнения: ");
+            Console.Write("Введите название упражнения:");
             var name = Console.ReadLine();
 
             var energy = ParseDouble("расход энергии в минуту");
 
             var begin = ParseDateTime("начало упражнения");
             var end = ParseDateTime("окончание упражнения");
-            var activity = new Activity(name, energy);
 
+            var activity = new Activity(name, energy);
             return (begin, end, activity);
         }
 
-        private static (Food Food, double Weight)  EnterEating()
+        private static (Food Food, double Weight) EnterEating()
         {
-            Console.WriteLine("Введите имя продукта: ");
+            Console.Write("Введите имя продукта: ");
             var food = Console.ReadLine();
 
-            var calories = ParseDouble("Калорийность");
+            var calories = ParseDouble("калорийность");
             var prots = ParseDouble("белки");
             var fats = ParseDouble("жиры");
             var carbs = ParseDouble("углеводы");
 
             var weight = ParseDouble("вес порции");
-
             var product = new Food(food, calories, prots, fats, carbs);
+
 
             return (Food: product, Weight: weight);
         }
@@ -145,4 +149,6 @@ namespace SamiFitnessCMD
             }
         }
     }
+
+
 }
