@@ -120,7 +120,7 @@
   <data name="EnterName" xml:space="preserve">
     <value>Введите имя пользователя</value>
   </data>
-  <data name="WelcomeMessage" xml:space="preserve">
+  <data name="Hello" xml:space="preserve">
     <value>Вас приветствует приложение SamiFitness</value>
   </data>
 </root>

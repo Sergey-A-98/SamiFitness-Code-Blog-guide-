@@ -72,9 +72,9 @@ namespace SamiFitnessCMD.Languages {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Вас приветствует приложение SamiFitness.
         /// </summary>
-        internal static string WelcomeMessage {
+        internal static string Hello {
             get {
-                return ResourceManager.GetString("WelcomeMessage", resourceCulture);
+                return ResourceManager.GetString("Hello", resourceCulture);
             }
         }
     }

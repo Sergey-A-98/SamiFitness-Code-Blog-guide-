@@ -150,5 +150,4 @@ namespace SamiFitnessCMD
         }
     }
 
-
 }

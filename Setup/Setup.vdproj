@@ -402,7 +402,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Setup"
         "ProductCode" = "8:{9A8B754D-764D-4AA7-80C3-E9074BB0ADCC}"
-        "PackageCode" = "8:{CFB40D7A-B9D0-4F73-AD7B-B3E65B6CF25A}"
+        "PackageCode" = "8:{0BB794FE-7A42-450A-B327-8AB373181C09}"
         "UpgradeCode" = "8:{3B796EAD-3BB1-4546-B39C-4A344EB14725}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
@@ -522,6 +522,34 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_6A62711113744AF0868C27AB166F617F"
+            {
+            "Name" = "8:SamiFitness"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_41DF1C49778D467894C1BC71F0F9F210"
+            "Folder" = "8:_C01F83E196B346A19337B5D54B88CA64"
+            "WorkingFolder" = "8:_99FE9927EEEE4B2EADEDBC17D8A01D0C"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_CFEB8BA3461E4FEC83FB27848ADCCD60"
+            {
+            "Name" = "8:SamiFitness"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_41DF1C49778D467894C1BC71F0F9F210"
+            "Folder" = "8:_99FE9927EEEE4B2EADEDBC17D8A01D0C"
+            "WorkingFolder" = "8:_99FE9927EEEE4B2EADEDBC17D8A01D0C"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {

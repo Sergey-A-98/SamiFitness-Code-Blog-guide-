@@ -9,9 +9,8 @@ using System.Threading.Tasks;
 
 namespace SamiFitnessBL.Controller
 {
-    class SerializeDataSaver : IDataSaver
+    class SerializableSaver : IDataSaver
     {
-
         public List<T> Load<T>() where T : class
         {
             var formatter = new BinaryFormatter();

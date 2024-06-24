@@ -120,7 +120,7 @@
   <data name="EnterName" xml:space="preserve">
     <value>Please, enter your name</value>
   </data>
-  <data name="WelcomeMessage" xml:space="preserve">
+  <data name="Hello" xml:space="preserve">
     <value>Welcome to the club, buddy</value>
   </data>
 </root>
